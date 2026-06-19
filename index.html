@@ -1,0 +1,956 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="description" content="Jiachi Chen's academic homepage — Web3 security, AI for Web3, software testing">
+  <meta name="author" content="Jiachi Chen">
+  <title>Jiachi Chen | ZJU · Web3 Security</title>
+  
+  <!-- modern font (Inter) & clean icons (optional) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+  <!-- tiny CSS reset & custom design -->
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background:
+        radial-gradient(circle at 8% 0%, rgba(37, 99, 235, 0.09), transparent 28rem),
+        #f3f6fb;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      line-height: 1.6;
+      color: #0f172a;
+      padding: 2rem 1rem;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      overflow-wrap: anywhere;
+      -webkit-text-size-adjust: 100%;
+    }
+
+    /* main card */
+    .homepage-card {
+      max-width: 1100px;
+      width: 100%;
+      background: #ffffff;
+      border-radius: 32px;
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
+      padding: 2.5rem 2.8rem;
+      transition: all 0.2s ease;
+      min-width: 0;
+      overflow: hidden;
+    }
+
+    @media (max-width: 700px) {
+      .homepage-card { padding: 1.8rem 1.5rem; }
+    }
+
+    /* section spacing */
+    section {
+      margin-bottom: 2.5rem;
+      min-width: 0;
+    }
+
+    h1 {
+      font-size: 2.3rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.3rem;
+      color: #0a1e3f;
+      line-height: 1.2;
+    }
+
+    h2 {
+      font-size: 1.7rem;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+      margin: 2rem 0 1.2rem 0;
+      padding-bottom: 0.4rem;
+      border-bottom: 3px solid #2563eb30; /* subtle blue */
+      color: #0f2b4b;
+      display: inline-block;
+    }
+
+    h2:first-of-type {
+      margin-top: 0.5rem;
+    }
+
+    /* profile header: flex layout */
+    .profile-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      align-items: center;
+      margin-bottom: 1rem;
+    }
+
+    .profile-info {
+      flex: 2;
+      min-width: 0;
+    }
+
+    .profile-photo {
+      flex: 1;
+      min-width: 200px;
+      text-align: center;
+    }
+
+    .profile-photo img {
+      width: 100%;
+      max-width: 260px;
+      border-radius: 50%;
+      box-shadow: 0 12px 28px -8px rgba(0, 20, 60, 0.25);
+      border: 4px solid white;
+      background: #f8fafc;
+      transition: transform 0.2s;
+    }
+
+    .profile-photo img:hover {
+      transform: scale(1.01);
+    }
+
+    .info-list {
+      list-style: none;
+      margin-top: 1rem;
+    }
+
+    .info-list li {
+      margin-bottom: 0.6rem;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-size: 1.05rem;
+      min-width: 0;
+    }
+
+    .info-list li::before {
+      content: "▹";
+      color: #2563eb;
+      font-weight: 600;
+      font-size: 1.2rem;
+    }
+
+    .email-icon {
+      font-weight: 500;
+    }
+
+    .links a {
+      color: #1e3a8a;
+      text-decoration: none;
+      font-weight: 500;
+      border-bottom: 1px dotted #2563eb80;
+    }
+
+    .links a:hover {
+      color: #0f2b4b;
+      border-bottom: 2px solid #2563eb;
+    }
+
+    /* biography & red highlight */
+    .biography-text {
+      background: #f8fafc;
+      padding: 1.5rem 2rem;
+      border-radius: 24px;
+      border-left: 5px solid #2563eb;
+      font-size: 1.08rem;
+      box-shadow: inset 0 2px 5px rgba(0,0,0,0.02);
+      margin: 1.2rem 0;
+    }
+
+    .red-highlight {
+      background: #fee9e7;
+      border-left: 5px solid #b91c1c;
+      padding: 1rem 1.8rem;
+      border-radius: 16px;
+      margin-top: 1.2rem;
+      font-weight: 500;
+      color: #7f1d1d;
+      font-size: 1.1rem;
+    }
+
+    .red-highlight strong {
+      color: #a1301f;
+    }
+
+    /* lists (publications, awards, etc) */
+    .pub-list, .award-list, .service-list, .exp-list {
+      list-style: none;
+      margin-top: 1rem;
+    }
+
+    .pub-list li, .award-list li, .service-list li, .exp-list li {
+      margin-bottom: 1rem;
+      padding-left: 1.6rem;
+      position: relative;
+      font-size: 1rem;
+      line-height: 1.6;
+      min-width: 0;
+      overflow-wrap: anywhere;
+    }
+
+    .pub-list li::before, .award-list li::before, .service-list li::before, .exp-list li::before {
+      content: "●";
+      color: #2563eb;
+      font-weight: bold;
+      position: absolute;
+      left: 0;
+      font-size: 1.1rem;
+    }
+
+    /* award special red text */
+    .award-list li [color="Red"], .award-list li font[color="Red"] {
+      color: #b91c1c !important;
+      font-weight: 600;
+      background: #fff0f0;
+      padding: 0.1rem 0.4rem;
+      border-radius: 12px;
+      display: inline-block;
+    }
+
+    /* publication venue style */
+    .pub-venue {
+      color: #2c3e6d;
+      font-weight: 500;
+      background: #e9edf5;
+      padding: 0.1rem 0.5rem;
+      border-radius: 30px;
+      font-size: 0.9rem;
+      display: inline-block;
+      max-width: 100%;
+      margin-top: 0.45rem;
+      white-space: normal;
+      overflow-wrap: anywhere;
+      line-height: 1.5;
+    }
+
+    .pub-authors {
+      color: #334155;
+    }
+
+    .pub-title {
+      font-weight: 650;
+      color: #0c1e38;
+      font-size: 1.04rem;
+      line-height: 1.45;
+    }
+
+    .distinguished-badge {
+      background: #fbbf24;
+      color: #1e293b;
+      font-weight: 600;
+      padding: 0.2rem 0.6rem;
+      border-radius: 30px;
+      font-size: 0.8rem;
+      display: inline-block;
+      margin-left: 0.5rem;
+      border: 1px solid #f59e0b;
+    }
+
+    /* research background list */
+    .exp-list li {
+      font-size: 1.02rem;
+    }
+
+    /* service list */
+    .service-list li {
+      font-size: 1.02rem;
+    }
+
+    hr {
+      border: none;
+      border-top: 1px solid #dde3ed;
+      margin: 2rem 0 1rem;
+    }
+
+    /* small adjustments for inline HTML inside publications (keep original tags) */
+    .pub-list b, .pub-list strong {
+      color: #0f2b4b;
+    }
+
+    .pub-list u {
+      text-decoration: none;
+      background: #f1f4ff;
+      padding: 0 0.2rem;
+      border-radius: 4px;
+    }
+
+    .pub-list tt {
+      font-family: 'SF Mono', 'Fira Code', monospace;
+      background: #eef2f6;
+      padding: 0.2rem 0.4rem;
+      border-radius: 6px;
+      font-size: 0.85rem;
+    }
+
+    /* professional services small spacing */
+    .compact-meta {
+      font-size: 0.95rem;
+      color: #3c4b64;
+    }
+
+    footer {
+      margin-top: 3rem;
+      text-align: center;
+      color: #5f6c86;
+      font-size: 0.9rem;
+      border-top: 1px solid #e2e8f0;
+      padding-top: 1.8rem;
+    }
+
+    /* keep original red class if used */
+    .red {
+      background: #fee2e2;
+      color: #991b1b;
+      padding: 0.5rem 1rem;
+      border-radius: 30px;
+      font-weight: 600;
+      display: inline-block;
+    }
+
+    /* link styling */
+    a {
+      color: #2563eb;
+      text-decoration: none;
+      font-weight: 500;
+      overflow-wrap: anywhere;
+    }
+
+    a:hover {
+      text-decoration: underline;
+      color: #1d4ed8;
+    }
+
+    /* Publication rows: soft separation improves scanning without changing content. */
+    .pub-list li {
+      margin-bottom: 0.35rem;
+      padding: 1rem 1rem 1rem 2.15rem;
+      border-bottom: 1px solid #e7ecf3;
+      border-radius: 12px;
+    }
+
+    .pub-list li::before {
+      left: 0.65rem;
+      top: 1.05rem;
+      font-size: 0.75rem;
+    }
+
+    .pub-list li:hover {
+      background: #f8faff;
+    }
+
+    .award-list li [color="Red"],
+    .award-list li font[color="Red"] {
+      max-width: 100%;
+      white-space: normal;
+      overflow-wrap: anywhere;
+    }
+
+    /* Tablet and phone layout. */
+    @media (max-width: 700px) {
+      body {
+        display: block;
+        padding: 0;
+        background: #fff;
+      }
+
+      .homepage-card {
+        max-width: none;
+        padding: 1.5rem 1.15rem 2rem;
+        border-radius: 0;
+        box-shadow: none;
+      }
+
+      .profile-row {
+        flex-direction: column-reverse;
+        align-items: flex-start;
+        gap: 1.25rem;
+      }
+
+      .profile-info,
+      .profile-photo {
+        width: 100%;
+        min-width: 0;
+      }
+
+      .profile-photo {
+        text-align: left;
+      }
+
+      .profile-photo img {
+        width: 132px;
+        max-width: 38vw;
+      }
+
+      .info-list li {
+        align-items: flex-start;
+      }
+
+      .biography-text {
+        padding: 1.15rem 1.1rem;
+        border-radius: 16px;
+      }
+
+      .red-highlight {
+        padding: 0.9rem 1rem;
+        border-radius: 12px;
+        font-size: 1rem;
+      }
+
+      .pub-list li {
+        padding: 0.95rem 0.25rem 1rem 1.3rem;
+      }
+
+      .pub-list li::before {
+        left: 0.1rem;
+      }
+
+      .pub-venue {
+        margin-left: 0;
+        padding: 0.25rem 0.55rem;
+        border-radius: 10px;
+        font-size: 0.84rem;
+      }
+
+      h2 {
+        display: block;
+        width: 100%;
+        margin-top: 1.75rem;
+      }
+    }
+
+    @media (max-width: 420px) {
+      h1 {
+        font-size: clamp(1.65rem, 8vw, 1.9rem);
+      }
+
+      h1 span {
+        display: block;
+        margin-top: 0.2rem;
+      }
+
+      h2 {
+        font-size: 1.4rem;
+      }
+
+      section {
+        margin-bottom: 2rem;
+      }
+
+      .info-list li,
+      .pub-list li,
+      .award-list li,
+      .service-list li,
+      .exp-list li {
+        font-size: 0.94rem;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        scroll-behavior: auto !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+  </style>
+
+  <!-- Global site tag (gtag.js) - Google Analytics (keep untouched) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-158965281-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'UA-158965281-1');
+  </script>
+</head>
+<body>
+<div class="homepage-card">
+
+  <!-- Profile header (flex instead of table) -->
+  <div class="profile-row">
+    <div class="profile-info">
+      <h1>Jiachi Chen <span style="font-weight:400; color:#3f5575;">· 陈嘉弓也</span></h1>
+      <div style="margin: 0.5rem 0 0.8rem 0;">
+        <span style="background: #2563eb10; color:#0b2c4f; padding: 0.2rem 1rem; border-radius: 40px; font-weight: 600;">ZJU 100 Young Professor</span>
+      </div>
+      <ul class="info-list">
+        <li>College of Computer Science and Technology <br> Zhejiang University, China</li>
+        <li>Email: chenjiachi[AT]zju.edu.cn</li>
+        <li class="links">
+          <a href="https://scholar.google.com/citations?user=FpdgEZMAAAAJ&hl=en" target="_blank">Google Scholar</a> · 
+          <a href="https://dblp.uni-trier.de/pid/181/3422.html" target="_blank">DBLP</a> · 
+          <a href="https://www.researchgate.net/profile/Jiachi_Chen2" target="_blank">ResearchGate</a>
+        </li>
+      </ul>
+    </div>
+    <div class="profile-photo">
+      <!-- original photo path, kept as is -->
+      <img src="/photo.jpg" alt="Jiachi Chen" onerror="this.style.display='none';">
+    </div>
+  </div>
+
+  <!-- Biography section with enhanced card -->
+  <section>
+    <h2>Biography</h2>
+    <div class="biography-text">   
+    <p style="margin-bottom: 1rem;">I am currently a <strong>ZJU 100 Young Professor</strong> in the College of Computer Science and Technology at Zhejiang University. Before joining Zhejiang University, I served as an Associate (tenured) Professor in the School of Software Engineering at Sun Yat-sen University. I received my Ph.D. from the Faculty of Information Technology at Monash University. I am very fortunate to have been advised by many outstanding researchers during my studies, including <a href="https://sites.google.com/site/johncgrundy/">Prof. John Grundy</a>, <a href="https://jiangshanyu.github.io/">Dr. Jiangshan Yu</a>, <a href="https://xin-xia.github.io/">Prof. Xin Xia</a>, <a href="http://www4.comp.polyu.edu.hk/~csxluo/">Prof. Xiapu Luo</a> and <a href="https://faculty.uestc.edu.cn/chenting/en/index.htm">Prof. Ting Chen</a>. My research interests focus on Agentic Economy, Web3 security, AI for Web3, Web3 for AI and software testing.</p>
+      <div class="red-highlight">
+        🔍 Looking for highly motivated students in the areas of AI for Web3, Web3 for AI, LLM Security, and Software Engineering. Please contact me if you have any interests.
+      </div>
+    </div>
+  </section>
+
+  <!-- Research Background (timeline style) -->
+  <section>
+    <h2>Research Background</h2>
+    <ul class="exp-list">
+      <li>12/2025 – Present, ZJU 100 Young Professor, College of Computer Science and Technology, Zhejiang University</li>
+      <li>03/2025 – 12/2025, Associate Professor, School of Software Engineering, Sun Yat-Sen University</li>
+      <li>04/2022 – 03/2025, Assistant Professor, School of Software Engineering, Sun Yat-Sen University</li>
+      <li>03/2019 – 03/2022, Ph.D, Faculty of Information Technology, Monash University</li>
+      <li>10/2016 – 06/2018, Research Assistant in The Hong Kong Polytechnic University</li>
+    </ul>
+  </section>
+
+  <!-- Awards & Honors (with red highlights) -->
+  <section>
+    <h2>Selected Awards and Programs</h2>
+    <ul class="award-list">
+      <!-- 注意: 所有原内容完全保留，只调整了展示样式，字体颜色标签依然有效 -->
+      <li><font color="Red">Early Career Award</font>, IEEE TEMS Technical Committee on Blockchain and Distributed Ledger Technologies, in cooperation with NTU CCTF, 2026</li>
+      <li><font color="Red">Empowering Chinese Blockchain Innovators: "Blockchain 60 People" (赋能中国区块链创新人物“区块链60人”)</font>, 2025</li>
+      <li><font color="Red">Young Elite Scientists Sponsorship Program by the Chinese Institute of Electronics (中国电子学会青年人才托举工程)</font>, 2025</li>
+      <li><font color="Red">Top 2% Scientist</font>, 2025</li>
+      <li><font color="Red">CCF Scientific and Technological Achievement Award - Second Prize in Natural Sciences (CCF科技成果奖自然科学二等奖)</font>, 2025</li>
+      <li><font color="Red">ACM SIGSOFT Distinguished Paper Award</font>, 47th International Conference on Software Engineering (ICSE), 2025</li>
+      <li><font color="Red">ACM SIGSOFT Distinguished Paper Award</font>, 47th International Conference on Software Engineering (ICSE), 2025</li>
+      <li><font color="Red">ACM SIGSOFT Distinguished Paper Award</font>, The ACM SIGSOFT International Symposium on Software Testing and Analysis (ISSTA), 2024</li>
+      <li><font color="Red">ACM SIGSOFT Distinguished Paper Award</font>, The ACM SIGSOFT International Symposium on Software Testing and Analysis (ISSTA), 2024</li>
+      <li><font color="Red">ACM SIGSOFT Distinguished Paper Award</font>, 14th Asia-Pacific Symposium on Internetware (Internetware), 2024</li>
+      <li><font color="Red">Best Paper Award</font>, IEEE CSCloud, 2023</li>
+      <li><font color="Red">Best Paper Award</font>, 40th IEEE International Conference on Computer Communications(INFOCOM), 2018</li>
+      <li><font color="Red">Best Paper Award</font>, 13th International Conference on Information Security Practice and Experience (ISPEC), 2017</li>
+    </ul>
+  </section>
+
+  <!-- Publications (huge list, preserved exactly with improved readability) -->
+  <section>
+    <h2>Publications</h2>
+    <ul class="pub-list">
+      <!-- everything inside is copied from original with zero text omission, only kept structure -->
+
+      <li><span class="pub-title">EffiReasonTrans: RL-Optimized Reasoning for Code Translation</span> <br>
+        Yanlin Wang, Rongyi Ou, Yanli Wang, Mingwei Liu, <u>Jiachi Chen</u>, Ensheng Shi, Xilin Liu, Yuchi Ma, Zibin Zheng.<br>
+        <span class="pub-venue">[IEEE Transactions on Software Engineering (TSE'26), <b>CCF A</b>]</span>
+      </li>
+      
+      <li><span class="pub-title">Beyond the Protocol: Unveiling Attack Vectors in the Model Context Protocol (MCP) Ecosystem</span> <br>
+        Hao Song, Yiming Shen, Wenxuan Luo, Leixin Guo, Ting Chen, Jiashui Wang, Beibei Li, Xiaosong Zhang, <u>Jiachi Chen</u><br>
+        <span class="pub-venue">[IEEE Transactions on Software Engineering (TSE'26), <b>CCF A</b>]</span>
+      </li>
+      <li><span class="pub-title">From Logical to Computational Sparsity: Structure-Aware Block-Sparse Attention for Long-Code Completion</span> <br>
+        Yanli Wang, Yanlin Wang, Bowen Zhang, Yiwei Zhang, Daya Guo, <u>Jiachi Chen</u>, Hongyu Zhang, Zibin Zheng<br>
+        <span class="pub-venue">[The 64th Annual Meeting of the Association for Computational Linguistics (ACL'26, Main Conference), <b>CCF A</b>]</span>
+      </li>
+      
+      <li><span class="pub-title">ArkRepoBench: A Repository-Level Code Completion Benchmark for HarmonyOS Development</span> <br>
+        Yanlin Wang, Bowen Zhang, Yanli Wang, Daya Guo, Terry Yue Zhuo, <u>Jiachi Chen</u>, Mingwei Liu, Xingong Zhang, Zibin Zheng<br>
+        <span class="pub-venue">[The 64th Annual Meeting of the Association for Computational Linguistics (ACL'26, Findings)]</span>
+      </li>
+
+      <li><span class="pub-title">RealSec-bench: A Benchmark for Evaluating Secure Code Generation in Real-World Repositories</span> <br>
+        Yanlin Wang, Ziyao Zhang, Chong Wang, Xinyi Xu, Mingwei Liu, Yong Wang, <u>Jiachi Chen</u>, Zibin Zheng<br>
+        <span class="pub-venue">[The 64th Annual Meeting of the Association for Computational Linguistics (ACL'26, Findings)]</span>
+      </li>
+
+      <li><span class="pub-title">From Conversation to Evaluation: Benchmarking LLMs on Development Knowledge via SimpleDevQA</span> <br>
+        Jing Zhang, Lianghong Guo, Yanlin Wang, Terry Yue Zhuo, Yong Wang, Mingwei Liu, <u>Jiachi Chen</u>, Ensheng Shi, Yuchi Ma, Hongyu Zhang, Zibin Zheng<br>
+        <span class="pub-venue">[The 64th Annual Meeting of the Association for Computational Linguistics (ACL'26, Findings)]</span>
+      </li>
+      
+      <li><span class="pub-title">SecFSM: Knowledge Graph-Guided LLMs for Generating Secure Verilog Code of Finite State Machine in SoCs</span> <br>
+        Ziteng Hu, Yingjie Xia, <u>Jiachi Chen</u>, Li Kuang, Yao Wan<br>
+        <span class="pub-venue">[IEEE Transactions on Dependable and Secure Computing (TDSC'26), <b>CCF A</b>]</span>
+      </li>
+      <li><span class="pub-title">Odyssey : Hunting Smart Contract Vulnerabilities with Fine-grained State Modeling and Exploration</span> <br>
+        Jianzhong Su, Mingxi Ye, <u>Jiachi Chen</u>, Yuhong Nan, Peilin Zheng, Tao Zhang, Zibin Zheng<br>
+        <span class="pub-venue">[The ACM International Conference on the Foundations of Software Engineering (FSE'26), <b>CCF A</b>]</span>
+      </li>
+      
+      <li><span class="pub-title">RepoReasoner: Evaluating Repository-Level Code Reasoning Ability of Long-Context Language Models</span> <br>
+        Yanlin Wang, Suiquan Wang, Yanli Wang, Bowen Zhang, Daya Guo, <u>Jiachi Chen*</u>, Zibin Zheng<br>
+        <span class="pub-venue">[The ACM International Conference on the Foundations of Software Engineering (FSE'26), <b>CCF A</b>]</span>
+      </li>
+      
+       <li><span class="pub-title">Detecting Code-Comment Inconsistencies in Smart Contracts by Combining LLM and Program Analysis</span> <br>
+        Jiashuo Zhang, <u>Jiachi Chen</u>, Ting Zhang, Yue Li, Daoyuan Wu, Yanlin Wang, Jianbo Gao, Ting Chen, Zhong Chen<br>
+        <span class="pub-venue">[The ACM International Conference on the Foundations of Software Engineering (FSE'26), <b>CCF A</b>]</span>
+      </li>
+      
+      <li><span class="pub-title">SWE Data Construction, Automatically!</span> <br>
+        Lianghong Guo, Yanlin Wang, Caihua Li, Wei Tao, Pengyu Yang, <u>Jiachi Chen</u>, Haoyu Song, Duyu Tang, Zibin Zheng<br>
+        <span class="pub-venue">[The ACM International Conference on the Foundations of Software Engineering (FSE'26), <b>CCF A</b>]</span>
+      </li>
+      <li><span class="pub-title">Balancing Latency and Accuracy of Code Completion via Local-Cloud Model Cascading</span> <br>
+        Hanzhen Lu, Lishui Fan, <u>Jiachi Chen</u>, Qiuyuan Chen, Zhao Wei, Zhongxin Liu<br>
+        <span class="pub-venue">[The ACM International Conference on the Foundations of Software Engineering (FSE'26), <b>CCF A</b>]</span>
+      </li>
+      <li><span class="pub-title">Towards an Understanding of Context Utilization in Code Intelligence</span> <br>
+        <span class="pub-authors">Yanlin Wang, Kefeng Duan, Dewu Zheng, Ensheng Shi, Fengji Zhang, Yanli Wang, <u>Jiachi Chen*</u>, Xilin Liu, Yuchi Ma, Hongyu Zhang, Qianxiang Wang, Zibin Zheng</span><br>
+        <span class="pub-venue">[ACM Computing Surveys (CSUR'26), <b>Core Ranking A*</b>]</span>
+      </li>
+      <li><span class="pub-title">Trace: Securing Smart Contract Repository Against Access Control Vulnerability</span> <br>
+        Chong Chen, Lingfeng Bao, David Lo, Yanlin Wang, Zhenyu Shan, Ting Chen*, Guangqiang Yin, Jianxing Yu, Zibin Zheng, <u>Jiachi Chen*</u><br>
+        <span class="pub-venue">[IEEE Transactions on Software Engineering (TSE'26), <b>CCF A</b>]</span>
+      </li>
+      <li><span class="pub-title">Improving Gas Efficiency in Smart Contracts: Data-Driven Insights and LLM-Assisted Remediation</span> <br>
+        Yijie Ruan, Zhipeng Gao, <u>Jiachi Chen</u>, Lingfeng Bao, Xiaohu Yang<br>
+        <span class="pub-venue">[IEEE Transactions on Software Engineering (TSE'26), <b>CCF A</b>]</span>
+      </li>
+      <li><span class="pub-title">Defining and Detecting the Defects of Large Language Model-based Autonomous Agents</span> <br>
+        Kaiwen Ning, <u>Jiachi Chen*</u>, Jingwen Zhang, Wei Li, Zexu Wang, Yuming Feng, Weizhe Zhang, Zibin Zheng<br>
+        <span class="pub-venue">[IEEE Transactions on Software Engineering (TSE'26), <b>CCF A</b>]</span>
+      </li>
+      <li><span class="pub-title">Lost in Blockchain Address Misuse: Hidden Cross-Platform Risks and Their Security Impact</span> <br>
+        Zhenzhe Shao, Jiashuo Zhang, Zihao Li, Daoyuan Wu, Chong Chen, Yiming Shen, Lingfeng Bao, Yanlin Wang, <u>Jiachi Chen*</u><br>
+        <span class="pub-venue">[USENIX Security '26 (Security'26), <b>CCF A</b>]</span>
+      </li>
+      <li><span class="pub-title">One Signature, Multiple Payments: Demystifying and Detecting Signature Replay Vulnerabilities in Smart Contracts</span> <br>
+        Zexu Wang, <u>Jiachi Chen</u>, Zewei Lin, Wenqing Chen, Kaiwen Ning, Jianxing Yu, Yuming Feng, Yu Zhang, Weizhe Zhang, Zibin Zheng<br>
+        <span class="pub-venue">[The 48th IEEE/ACM International Conference on Software Engineering (ICSE'26), <b>CCF A</b>]</span>
+      </li>
+      <li><span class="pub-title">FORGE: An LLM-driven Framework for Large-Scale Smart Contract Vulnerability Dataset Construction</span> <br>
+        <u>Jiachi Chen</u>, Yiming Shen, Jiashuo Zhang, Zihao Li, John Grundy, Zhenzhe Shao, Yanlin Wang, Jiashui Wang, Ting Chen, Zibin Zheng<br>
+        <span class="pub-venue">[The 48th IEEE/ACM International Conference on Software Engineering (ICSE'26), <b>CCF A</b>]</span>
+      </li>
+      <li><span class="pub-title">RepoTransBench: A Real-World Multilingual Benchmark for Repository-Level Code Translation</span> <br>
+        Yanli Wang, Yanlin Wang, Suiquan Wang, Daya Guo, <u>Jiachi Chen</u>, John Grundy, Xilin Liu, Yuchi Ma, Mingzhi Mao, Hongyu Zhang, Zibin Zheng<br>
+        <span class="pub-venue">[IEEE Transactions on Software Engineering (TSE'25, CCF-A), <b>CCF A</b>]</span>
+      </li>
+      <li><span class="pub-title">An Empirical Study on Low Code Programming Using Traditional vs Large Language Model Support</span> <br>
+        Yongkun Liu, <u>Jiachi Chen*</u>, Tingting Bi, John Grundy, Yanlin Wang, Jianxing Yu, Ting Chen, Yutian Tang, Zibin Zheng<br>
+        <span class="pub-venue">[Journal of Systems and Software (JSS'25), CCF B]</span>
+      </li>
+      <li><span class="pub-title">To Healthier Ethereum: A comprehensive and iterative smart contract weakness enumeration</span> <br>
+        <u>Jiachi Chen</u>, Mingyuan Huang, Zewei Lin, Peilin Zheng, Zibin Zheng<br>
+        <span class="pub-venue">[Blockchain: Research and Applications (BCRA'25), CCF B]</span>
+      </li>
+      <li><span class="pub-title">Exploring the potential of ChatGPT in detecting logical vulnerabilities in smart contracts</span> <br>
+        Qingyuan Liu, Meng Wu, <u>Jiachi Chen</u>, Ting Chen, Xi Chen, Renkai Jiang, Yuqiao Yang, Zhangyan Lin, Yuanyao Cheng<br>
+        <span class="pub-venue">[Blockchain: Research and Applications (BCRA'25), CCF B]</span>
+      </li>
+      <li><span class="pub-title">CoSQA+: Enhancing Code Search Evaluation with a Multi-Choice Benchmark and Test-Driven Agents</span> <br>
+        Jing Gong, Yanghui Wu, Linxi Liang, Yanlin Wang, <u>Jiachi Chen</u>, Mingwei Liu, Zibin Zheng<br>
+        <span class="pub-venue">[IEEE Transactions on Software Engineering (TSE'25, CCF-A), <b>CCF A</b>]</span>
+      </li>
+      <li><span class="pub-title">SSR: Safeguarding Staking Rewards by Defining and Detecting Logical Defects in DeFi Staking</span> <br>
+        Zewei Lin, <u>Jiachi Chen</u>, Jingwen Zhang, Zexu Wang, Yuming Feng, Weizhe Zhang, Zibin Zheng<br>
+        <span class="pub-venue">[Automated Software Engineering (ASE'25), <b>CCF A</b>]</span>
+      </li>
+      <li><span class="pub-title">DrainCode: Stealthy Energy Consumption Attacks on Retrieval-Augmented Code Generation via Context Poisoning</span> <br>
+        Jiadong Wu, Yanlin Wang, Tianyue Jiang, Meiwei Liu, <u>Jiachi Chen</u>, Chong Wang, Ensheng Shi, Xilin Liu, Yuchi Ma, Hongyu Zhang, Zibin Zheng<br>
+        <span class="pub-venue">[Automated Software Engineering (ASE'25), <b>CCF A</b>]</span>
+      </li>
+      <li><span class="pub-title">ACTaint: Agent-Based Taint Analysis for Access Control Vulnerabilities in Smart Contracts</span> <br>
+        Huarui Ling, Zhipeng Gao, <u>Jiachi Chen</u>, Xiang Chen, Xiaohu Yang, Lingfeng Bao<br>
+        <span class="pub-venue">[Automated Software Engineering (ASE'25), <b>CCF A</b>]</span>
+      </li>
+      <li><span class="pub-title">SolContractEval: A Benchmark for Evaluating Contract-Level Solidity Code Generation</span> <br>
+        Zhifan Ye, <u>Jiachi Chen</u>, Zhenzhe Shao, Lingfeng Bao, Xiaohu Yang, Zhongxin Liu<br>
+        <span class="pub-venue">[Automated Software Engineering (ASE'25), <b>CCF A</b>]</span>
+      </li>
+      <li><span class="pub-title">AlignCoder: Aligning Retrieval with Target Intent for Repository-Level Code Completion</span> <br>
+        Tianyue Jiang, Yanli Wang, Yanlin Wang, Daya Guo, Ensheng Shi, Yuchi Ma, <u>Jiachi Chen</u>, Zibin Zheng<br>
+        <span class="pub-venue">[Automated Software Engineering (ASE'25), <b>CCF A</b>]</span>
+      </li>
+      <li><span class="pub-title">Towards Exploring Developers’ Struggles in Developing Upgradeable Smart Contracts</span> <br>
+        Zhijie Zhong, <u>Jiachi Chen*</u>, Jiashui Wang*, Qing Xue, Jiajing Wu, Long Liu, Xinlei Ying, Zibin Zheng<br>
+        <span class="pub-venue">[IEEE Transactions on Software Engineering (TSE'25), <b>CCF A</b>]</span>
+      </li>
+      <li><span class="pub-title">Who is Pulling the Strings: Unveiling Smart Contract State Manipulation Attacks through State-Aware Dataflow Analysis</span> <br>
+        Shuo Yang, <u>Jiachi Chen</u>, Lei Xiao, Jinyuan Hu, Dan Lin, Jiajing Wu, Tao Zhang, Zibin Zheng<br>
+        <span class="pub-venue">[IEEE Transactions on Software Engineering (TSE'25), <b>CCF A</b>]</span>
+      </li>
+      <li><span class="pub-title">Agents in Software Engineering: Survey, Landscape, and Vision</span> <br>
+        Wanlin Wang, Wanjun Zhong, Yanxian Huang, Ensheng Shi, Min Yang, <u>Jiachi Chen</u>, Hui Li, Yuchi Ma, Qianxiang Wang, Zibin Zheng<br>
+        <span class="pub-venue">[Automated Software Engineering Journal (AuSE'25), CCF B]</span>
+      </li>
+      <li><span class="pub-title">Malo in the Code Jungle: Explainable Fault Localization for Decentralized Applications</span> <br>
+        Hui Zhang, Jiajing Wu, Zhiying Wu, Zhe Chen, Dan Lin, <u>Jiachi Chen</u>, Yuren Zhou, Zibin Zheng<br>
+        <span class="pub-venue">[IEEE Transactions on Software Engineering (TSE'25), <b>CCF A</b>]</span>
+      </li>
+      <li><span class="pub-title">Copy-and-Paste? Identifying EVM-Inequivalent Code Smells in Multi-chain Reuse Contracts</span> <br>
+        Zexu Wang, <u>Jiachi Chen</u>, Tao Zhang, Yu Zhang, Weizhe Zhang, Yuming Feng, Zibin Zheng<br>
+        <span class="pub-venue">[The ACM SIGSOFT International Symposium on Software Testing and Analysis (ISSTA'25), <b>CCF A</b>]</span>
+      </li>
+      <li><span class="pub-title">OmniGIRL: A Multilingual and Multimodal Benchmark for GitHub Issue Resolution</span> <br>
+        Lianghong Guo, Wei Tao, Runhan Jiang, Yanlin Wang, <u>Jiachi Chen</u>, Xilin Liu, Yuchi Ma, Mingzhi Mao, Hongyu Zhang, Zibin Zheng<br>
+        <span class="pub-venue">[The ACM SIGSOFT International Symposium on Software Testing and Analysis (ISSTA'25), <b>CCF A</b>]</span>
+      </li>
+      <li><span class="pub-title">LLM Hallucinations in Practical Code Generation: Phenomena, Mechanism, and Mitigation</span> <br>
+        Ziyao Zhang, Chong Wang, Yanlin Wang, Ensheng Shi, Yuchi Ma, Wanjun Zhong, <u>Jiachi Chen</u>, Mingzhi Mao, Zibin Zheng<br>
+        <span class="pub-venue">[The ACM SIGSOFT International Symposium on Software Testing and Analysis (ISSTA'25), <b>CCF A</b>]</span>
+      </li>
+      <li><span class="pub-title">NumScout: Unveiling Numerical Defects in Smart Contracts using LLM-Pruning Symbolic Execution</span> <br>
+        <u>Jiachi Chen</u>, Zhenzhe Shao, Shuo Yang, Yiming Shen, Yanlin Wang, Ting Chen, Zhenyu Shan, Zibin Zheng<br>
+        <span class="pub-venue">[IEEE Transactions on Software Engineering (TSE'25), <b>CCF A</b>]</span>
+      </li>
+      <li><span class="pub-title">When Crypto Fails: Demystifying Cryptographic Defects in Ethereum Smart Contracts</span> <br>
+        Jiashuo Zhang, <u>Jiachi Chen*</u>, Yiming Shen, Tao Zhang, Yanlin Wang, Ting Chen, Jianbo Gao, Zhong Chen<br>
+        <span class="pub-venue">[IEEE Transactions on Software Engineering (TSE'25), <b>CCF A</b>]</span>
+      </li>
+      <li><span class="pub-title">Detecting Reentrancy Vulnerabilities for Solidity Smart Contracts with Contract Standards-Based Rules</span> <br>
+        Jie Cai, <u>Jiachi Chen</u>, Tao Zhang, Xiapu Luo, Xiaobing Sun, Bin Li<br>
+        <span class="pub-venue">[IEEE Transactions on Information Forensics and Security (TIFS'25), <b>CCF A</b>]</span>
+      </li>
+      <li><span class="pub-title">SmartOracle: Generating Smart Contract Oracle via Fine-Grained Invariant Detection</span> <br>
+        Jianzhong Su, <u>Jiachi Chen*</u>, Zhiyuan Fang, Xingwei Lin, Yutian Tang and Zibin Zheng<br>
+        <span class="pub-venue">[IEEE Transactions on Software Engineering (TSE'25), <b>CCF A</b>]</span>
+      </li>
+      <li><span class="pub-title">Beyond Functional Correctness: Investigating Coding Style Inconsistencies in Large Language Models</span> <br>
+        Yanlin Wang, Tianyue Jiang, Mingwei Liu, <u>Jiachi Chen</u>, Mingzhi Mao, Xilin Liu, Yuchi Ma and Zibin Zheng<br>
+        <span class="pub-venue">[The ACM International Conference on the Foundations of Software Engineering (FSE‘25), <b>CCF A</b>]</span>
+      </li>
+      <li><span class="pub-title">Automated Test Generation For Smart Contracts via On-Chain Test Case Augmentation and Migration</span> <br>
+        Jiashuo Zhang, <u>Jiachi Chen</u>*, John Grundy, Jianbo Gao, Yanlin Wang, Ting Chen, Zhi Guan, Zhong Chen*<br>
+        <span class="pub-venue">[The 47th International Conference on Software Engineering (ICSE'25), <b>CCF A</b>]</span>
+      </li>
+      <li><span class="pub-title">Enhancing The Open Network: Definition and Automated Detection of Smart Contract Defects</span> <br>
+        Hao Song, Teng Li, <u>Jiachi Chen</u>*, Ting Chen*, Beibei Li, Zhangyan Lin, Yi Lu, Pan Li, Xihan Zhou<br>
+        <span class="pub-venue">[The 47th International Conference on Software Engineering (ICSE'25), <b>CCF A</b>,  <b><tt>🏆ACM SIGSOFT Distinguished Paper Award🏆</tt></b>]</span>
+      </li>
+      <li><span class="pub-title">Definition and Detection of Centralization Defects in Smart Contracts</span> <br>
+        Zewei Lin, <u>Jiachi Chen</u>, Jiajing Wu, Weizhe Zhang, Zibin Zheng<br>
+        <span class="pub-venue">[The 47th International Conference on Software Engineering (ICSE'25), <b>CCF A</b>]</span>
+      </li>
+      <li><span class="pub-title">Hyperion: Unveiling DApp Inconsistencies using LLM and Dataflow-Guided Symbolic Execution</span> <br>
+        Shuo Yang, Xingwei Lin, <u>Jiachi Chen</u>*, Qingyuan Zhong, Lei Xiao, Renke Huang, Yanlin Wang, Zibin Zheng<br>
+        <span class="pub-venue">[The 47th International Conference on Software Engineering (ICSE'25), <b>CCF A</b>]</span>
+      </li>
+      <li><span class="pub-title">RLCoder: Reinforcement Learning for Repository-Level Code Completion</span> <br>
+        Yanlin Wang, Yanli Wang, Daya Guo, <u>Jiachi Chen</u>*, Ruikai Zhang, Yuchi Ma, Zibin Zheng<br>
+        <span class="pub-venue">[The 47th International Conference on Software Engineering (ICSE'25), <b>CCF A</b>]</span>
+      </li>
+      <li><span class="pub-title">Demystifying and Detecting Cryptographic Defects in Ethereum Smart Contracts</span> <br>
+        Jiashuo Zhang, Yiming Shen, <u>Jiachi Chen</u>*, Jianzhong Su, Yanlin Wang, Ting Chen, Jianbo Gao*, Zhong Chen*<br>
+        <span class="pub-venue">[The 47th International Conference on Software Engineering (ICSE'25), <b>CCF A</b>,  <b><tt>🏆ACM SIGSOFT Distinguished Paper Award🏆</tt></b>]</span>
+      </li>
+      <li><span class="pub-title">Towards an Understanding of Large Language Models in Software Engineering Tasks</span> <br>
+        Zibin Zheng, Kaiwen Ning, Qingyuan Zhong, <u>Jiachi Chen*</u>, Wenqing Chen, Lianghong Guo,Weicheng Wang, Yanlin Wang<br>
+        <span class="pub-venue">[Empirical Software Engineering (EMSE'24), CCF B]</span>
+      </li>
+      <li><span class="pub-title">When ChatGPT Meets Smart Contract Vulnerability Detection: How far are we?</span> <br>
+        Chong Chen, Jianzhong Su, <u>Jiachi Chen</u>*, Yanlin Wang, Tingting Bi, Jianxing Yu, Yanli Wang, Xingwei Lin, Ting Chen, Zibin Zheng<br>
+        <span class="pub-venue">[ACM Transactions on Software Engineering and Methodology (TOSEM'24), <b>CCF A</b>]</span>
+      </li>
+      <li><span class="pub-title">RMCBench: Benchmarking Large Language Models' Resistance to Malicious Code</span> <br>
+        <u>Jiachi Chen</u>, Qingyuan Zhong#, Yanlin Wang, Kaiwen Ning, Yongkun Liu, Zenan Xu, Zhe Zhao, Ting Chen, Zibin Zheng<br>
+        <span class="pub-venue">[The 39th ACM/IEEE International Conference on Automated Software Engineering (ASE'24), <b>CCF A</b>]</span>
+      </li>
+      <li><span class="pub-title">Unity is Strength: Enhancing Precision in Reentrancy Vulnerability Detection of Smart Contract Analysis Tools</span> <br>
+        Zexu Wang, <u>Jiachi Chen</u>*, Peilin Zheng, Yu Zhang, Weizhe Zhang, Zibin Zheng<br>
+        <span class="pub-venue">[IEEE Transactions on Software Engineering (TSE'24), <b>CCF A</b>]</span>
+      </li>
+      <li><span class="pub-title">The Dark Side of NFTs: A Large-Scale Empirical Study of Wash Trading</span> <br>
+        Shijian Chen, <u>Jiachi Chen</u>*, Jiangshan Yu, Xiapu Luo, Yanlin Wang<br>
+        <span class="pub-venue">[Internetware 2024,  <b><tt>🏆ACM SIGSOFT Distinguished Paper Award🏆</tt></b>]</span>
+      </li>
+      <li><span class="pub-title">An overview of Web3 technology: Infrastructure, applications, and popularity</span> <br>
+        Renke Huang, <u>Jiachi Chen</u>, Yanlin Wang, Tingting Bi, Liming Nie, Zibin Zheng<br>
+        <span class="pub-venue">[Blockchain: Research and Applications (BCRA'24), CCF B]</span>
+      </li>
+      <li><span class="pub-title">Angels or Demons: Investigating and Detecting Decentralized Financial Traps on Ethereum Smart Contracts</span> <br>
+        <u>Jiachi Chen</u>, Jiang Hu, Xin Xia, David Lo, John Grundy, Zhipeng Gao, Ting Chen<br>
+        <span class="pub-venue">[Automated Software Engineering Journal (AuSE'24), CCF B]</span>
+      </li>
+      <li><span class="pub-title">Empirical Study of Move Smart Contract Security: Introducing MoveScan for Enhanced Analysis</span> <br>
+        Shuwei Song, <u>Jiachi Chen</u>*, Ting Chen*, Xiapu Luo*, Teng Li, Wenwu Yang, Leqing Wang, Weijie Zhang, Feng Luo, Zheyuan He, Yi Lu, Pan Li<br>
+        <span class="pub-venue">[International Symposium on Software Testing and Analysis (ISSTA'24), <b>CCF A</b>]</span>
+      </li>
+      <li><span class="pub-title">Identifying Smart Contract Security Issues in Code Snippets from Stack Overflow</span> <br>
+        <u>Jiachi Chen</u>, Chong Chen, Jiang Hu, John Grundy, Yanlin Wang, Ting Chen, Zibin Zheng<br>
+        <span class="pub-venue">[International Symposium on Software Testing and Analysis (ISSTA'24), <b>CCF A</b>, <b><tt>🏆ACM SIGSOFT Distinguished Paper Award🏆</tt></b>]</span>
+      </li>
+      <li><span class="pub-title">When to Stop? Towards Efficient Code Generation in LLMs with Excess Token Prevention</span> <br>
+        Lianghong Gao, Yanlin Wang, Ensheng Shi, Wanjun Zhong, Hongyu Zhang, <u>Jiachi Chen</u>, Ruikai Zhang, Yuchi Ma, Zibin Zheng<br>
+        <span class="pub-venue">[International Symposium on Software Testing and Analysis (ISSTA'24), <b>CCF A</b>, <b><tt>🏆ACM SIGSOFT Distinguished Paper Award🏆</tt></b>]</span>
+      </li>
+      <li><span class="pub-title">CRPWarner: Warning the Risk of Contract-related Rug Pull in DeFi Smart Contracts</span> <br>
+        Zewei Lin, <u>Jiachi Chen</u>, Jiajing Wu, Weizhe Zhang, Yongjuan Wang, Zibin Zheng<br>
+        <span class="pub-venue">[IEEE Transactions on Software Engineering (TSE'24), <b>CCF A</b>]</span>
+      </li>
+      <li><span class="pub-title">DAppSCAN: Building Large-Scale Datasets for Smart Contract Weaknesses in DApp Projects</span> <br>
+        Zibin Zheng, Jianzhong Su, <u>Jiachi Chen</u>*, David Lo, Zhijie Zhong and Mingxi Ye<br>
+        <span class="pub-venue">[IEEE Transactions on Software Engineering (TSE'24), <b>CCF A</b>]</span>
+      </li>
+      <li><span class="pub-title">DAppFL: Just-in-Time Fault Localization for Decentralized Applications in Web3</span> <br>
+        Zhiying Wu, Jiajing Wu, Hui Zhang, Ziwei Li, <u>Jiachi Chen</u>, Zibin Zheng, Qing Xia, Gang Fan, Yi Zhen<br>
+        <span class="pub-venue">[The ACM SIGSOFT International Symposium on Software Testing and Analysis (ISSTA'24), <b>CCF A</b>]</span>
+      </li>
+      <li><span class="pub-title">Market manipulation of Cryptocurrencies: Evidence from Social Media and Transaction Data</span> <br>
+        Li Wen, Lingfeng Bao*, <u>Jiachi Chen</u>*, John Grundy, Xin Xia, Xiaohu Yang<br>
+        <span class="pub-venue">[ACM Transactions on Internet Technology (TOIT’24), CCF B]</span>
+      </li>
+      <li><span class="pub-title">Efficiently Detecting Reentrancy Vulnerabilities in Complex Smart Contracts</span> <br>
+        Zexu Wang, <u>Jiachi Chen</u>, Yanlin Wang, Zibin Zheng, Yu Zhang, Weizhe Zhang<br>
+        <span class="pub-venue">[The ACM International Conference on the Foundations of Software Engineering (FSE'24), <b>CCF A</b>]</span>
+      </li>
+      <li><span class="pub-title">When Contracts Meets Crypto: Exploring Developers' Struggles with Ethereum Cryptographic APIs</span> <br>
+        Jiashuo Zhang, <u>Jiachi Chen</u>*, Zhiyuan Wan, Ting Chen, Jianbo Gao, Zhong Chen<br>
+        <span class="pub-venue">[The 46th International Conference on Software Engineering (ICSE'24), <b>CCF A</b>]</span>
+      </li>
+      <li><span class="pub-title">Uncover the Premeditated Attacks: Detecting Exploitable Reentrancy Vulnerabilities by Identifying Attacker Contracts</span> <br>
+        Shuo Yang, <u>Jiachi Chen</u>*, Mingyuan Huang, Zibin Zheng, Yuan Huang<br>
+        <span class="pub-venue">[The 46th International Conference on Software Engineering (ICSE'24), <b>CCF A</b>]</span>
+      </li>
+      <li><span class="pub-title">Revealing Hidden Threats: An Empirical Study of Library Misuse in Smart Contracts</span> <br>
+        Mingyuan Huang, <u>Jiachi Chen</u>, Zigui Jiang, Zibin Zheng<br>
+        <span class="pub-venue">[The 46th International Conference on Software Engineering (ICSE'24), <b>CCF A</b>]</span>
+      </li>
+      <li><span class="pub-title">Exploring Heterogeneous Decentralized Markets in DeFi and NFT on Ethereum Blockchain</span> <br>
+        Peilin Zheng, Bowei Su, Zigui Jiang, Changlin Yan, <u>Jiachi Chen</u>, Jiajing Wu<br>
+        <span class="pub-venue">[2023 IEEE 10th International Conference on Cyber Security and Cloud Computing (CSCloud), <b><tt>🏆Best Paper Award🏆</tt></b>]</span>
+      </li>
+      <li><span class="pub-title">DeFiWarder: Protecting DeFi Apps from Token Leaking Vulnerabilities</span> <br>
+        Jianzhong Su, Xingwei Lin, Zhiyuan Fang, Zhirong Zhu, <u>Jiachi Chen</u>*, Zibin Zheng, Wei Lv, Jiashui Wang<br>
+        <span class="pub-venue">[The 38th IEEE/ACM International Conference on Automated Software Engineering (ASE'23), <b>CCF A</b>]</span>
+      </li>
+      <li><span class="pub-title">You Augment Me: Exploring ChatGPT-based Data Augmentation for Semantic Code Search</span> <br>
+        Yanlin Wang, Lianghong Guo, Ensheng Shi, Wenqing Chen, <u>Jiachi Chen</u>, Wanjun Zhong, Menghan Wang, Hui Li, Ziyu Lyu, Hongyu Zhang, Zibin Zheng<br>
+        <span class="pub-venue">[The 39th IEEE International Conference on Software Maintenance and Evolution (ICSME'23), CCF B]</span>
+      </li>
+      <li><span class="pub-title">Definition and Detection of Defects in NFT Smart Contracts</span> <br>
+        Shuo Yang, <u>Jiachi Chen</u>*, Zibin Zheng<br>
+        <span class="pub-venue">[The ACM SIGSOFT International Symposium on Software Testing and Analysis (ISSTA'23), <b>CCF A</b>]</span>
+      </li>
+      <li><span class="pub-title">DeFiTainter: Detecting Price Manipulation Vulnerabilities in DeFi Protocols</span> <br>
+        Queping Kong, <u>Jiachi Chen</u>, Yanlin Wang, Zigui Jiang, Zibin Zheng<br>
+        <span class="pub-venue">[The ACM SIGSOFT International Symposium on Software Testing and Analysis (ISSTA'23), <b>CCF A</b>]</span>
+      </li>
+      <li><span class="pub-title">Toward Automated Detecting Unanticipated Price Feed in Smart Contract</span> <br>
+        Yifan Mo, <u>Jiachi Chen</u>, Yanlin Wang, Zibin Zheng<br>
+        <span class="pub-venue">[The ACM SIGSOFT International Symposium on Software Testing and Analysis (ISSTA'23), <b>CCF A</b>]</span>
+      </li>
+      <li><span class="pub-title">Automatic Identification of Crash-inducing Smart Contracts</span> <br>
+        Chao Ni, Cong Tian, Kaiwen Yang, David Lo, <u>Jiachi Chen</u>, Xiaohu Yang<br>
+        <span class="pub-venue">[The 30th IEEE International Conference on Software Analysis, Evolution and Reengineering (SANER'23), CCF B]</span>
+      </li>
+      <li><span class="pub-title">Turn the Rudder: A Beacon of Reentrancy Detection for Smart Contracts on Ethereum</span> <br>
+        Zibin Zheng, Neng Zhang, Jianzhong Su, Zhijie Zhong, Mingxi Ye, <u>Jiachi Chen</u><br>
+        <span class="pub-venue">[International Conference on Software Engineering (ICSE’23), <b>CCF A</b>]</span>
+      </li>
+      <li><span class="pub-title">Reentrancy Vulnerability Detection and Localization: A Deep Learning Based Two-phase Approach</span> <br>
+        Zhuo Zhang, Yan Lei, Meng Yan, Yue Yu, <u>Jiachi Chen</u>, Shangwen Wang, Xiaoguang Mao<br>
+        <span class="pub-venue">[IEEE/ACM International Conference on Automated Software Engineering (ASE'22), <b>CCF A</b>]</span>
+      </li>
+      <li><span class="pub-title">Towards Automatically Localizing Function Errors in Mobile Apps with User Reviews</span> <br>
+        Le Yu, Haoyu Wang, Xiapu Luo, Tao Zhang, Kang Liu, <u>Jiachi Chen</u>, Hao Zhou, Yutian Tang, Xusheng Xiao<br>
+        <span class="pub-venue">[IEEE Transactions on Software Engineering (TSE'22), <b>CCF A</b>]</span>
+      </li>
+      <li><span class="pub-title">Large-Scale Empirical Study of Inline Assembly on 7.6 Million Ethereum Smart Contracts</span> <br>
+        Zhou Liao, Shuwei Song, Hang Zhu, Xiapu Luo, Zheyuan He, Renkai Jiang, Ting Chen, <u>Jiachi Chen</u>, Tao Zhang, Xiaosong Zhang<br>
+        <span class="pub-venue">[IEEE Transactions on Software Engineering (TSE'22), <b>CCF A</b>]</span>
+      </li>
+      <li><span class="pub-title">Why Do Smart Contracts Self-Destruct? Investigating the Selfdestruct Function on Ethereum</span> <br>
+        <u>Jiachi Chen</u>, Xin Xia, David Lo, John Grundy<br>
+        <span class="pub-venue">[ACM Transactions on Software Engineering and Methodology (TOSEM'21), <b>CCF A</b>]</span>
+      </li>
+      <li><span class="pub-title">Maintenance-Related Concerns for Post-deployed Ethereum Smart Contract Development: Issues, Techniques, and Future Challenges</span> <br>
+        <u>Jiachi Chen</u>, Xin Xia, David Lo, John Grundy, Xiaohu Yang<br>
+        <span class="pub-venue">[Empirical Software Engineering (EMSE'21), CCF B]</span>
+      </li>
+      <li><span class="pub-title">DEFECTCHECKER: Automated Smart Contract Defect Detection by Analyzing EVM Bytecode</span> <br>
+        <u>Jiachi Chen</u>, Xin Xia, David Lo, John Grundy, Xiapu Luo, Ting Chen<br>
+        <span class="pub-venue">[IEEE Transactions on Software Engineering (TSE'21), <b>CCF A</b>]</span>
+      </li>
+      <li><span class="pub-title">Smart Contract Security: a Practitioners’ Perspective</span> <br>
+        Zhiyuan Wan, Xin Xia, David Lo, <u>Jiachi Chen</u>, Xiapu Luo, Xiaohu Yang<br>
+        <span class="pub-venue">[43rd ACM/IEEE International Conference on Software Engineering (ICSE'21), <b>CCF A</b>]</span>
+      </li>
+      <li><span class="pub-title">Defining Smart Contract Defects on Ethereum</span> <br>
+        <u>Jiachi Chen</u>, Xin Xia, David Lo, John Grundy, Xiapu Luo, Ting Chen<br>
+        <span class="pub-venue">[IEEE Transactions on Software Engineering (TSE'20), <b>CCF A</b>]</span>
+      </li>
+      <li><span class="pub-title">Understanding Ethereum via Graph Analysis</span> <br>
+        Ting Chen, Zihao Li, Yuxiao Zhu, <u>Jiachi Chen</u>, Xiapu Luo, John Chi-Shing Lui, Xiaodong Lin, Xiaosong Zhang<br>
+        <span class="pub-venue">[ACM Transactions on Internet Technology (TOIT’20), CCF B]</span>
+      </li>
+      <li><span class="pub-title">Finding Ethereum Smart Contracts Security Issues by Comparing History Versions</span> <br>
+        <u>Jiachi Chen</u><br>
+        <span class="pub-venue">[IEEE/ACM International Conference on Automated Software Engineering(ASE'20-SRC), CCF A - Short Paper]</span>
+      </li>
+      <li><span class="pub-title">GasChecker: Scalable Analysis for Discovering Gas-Inefficient Smart Contracts</span> <br>
+        Ting Chen, Youzheng Feng, Zihao Li, Hao Zhou, Xiapu Luo, Xiaoqi Li, Xiuzhuo Xiao, <u>Jiachi Chen</u>, Xiaosong Zhang<br>
+        <span class="pub-venue">[IEEE Transactions on Emerging Topics in Computing (TETC'20)]</span>
+      </li>
+      <li><span class="pub-title">Where2Change: Change Request Localization for App Reviews</span> <br>
+        Tao Zhang, <u>Jiachi Chen</u>, Xian Zhan, Xiapu Luo, David Lo, He Jiang<br>
+        <span class="pub-venue">[IEEE Transactions on Software Engineering (TSE'19), <b>CCF A</b>]</span>
+      </li>
+      <li><span class="pub-title">Dataether: Data exploration framework for ethereum</span> <br>
+        Ting Chen, Zihao Li, Yufei Zhang, Xiapu Luo, Ang Chen, Kun Yang, Bin Hu, Tong Zhu, Shifang Deng, Teng Hu, <u>Jiachi Chen</u>, Xiaosong Zhang<br>
+        <span class="pub-venue">[International Conference on Distributed Computing Systems (ICDCS'19), CCF B]</span>
+      </li>
+      <li><span class="pub-title">PPChecker: Towards Accessing the Trustworthiness of Android Apps' Privacy Policies</span> <br>
+        Le Yu, Xiapu Luo, <u>Jiachi Chen</u>, Hao Zhou, Tao Zhang, Henry Chang, Hareton KN Leung<br>
+        <span class="pub-venue">[IEEE Transactions on Software Engineering (TSE'18), <b>CCF A</b>]</span>
+      </li>
+      <li><span class="pub-title">Localizing Function Errors in Mobile Apps with User Reviews</span> <br>
+        Le Yu, <u>Jiachi Chen</u>, Hao Zhou, Xiapu Luo, Kang Liu<br>
+        <span class="pub-venue">[IEEE/IFIP International Conference on Dependable Systems and Networks (DSN'18), CCF B]</span>
+      </li>
+      <li><span class="pub-title">Towards saving money in using smart contracts</span> <br>
+        Ting Chen, Zihao Li, Hao Zhou, <u>Jiachi Chen</u>, Xiapu Luo, Xiaoqi Li, Xiaosong Zhang<br>
+        <span class="pub-venue">[International Conference on Software Engineering: New Ideas and Emerging Technologies Results (ICSE'18-NIER), CCF A - Short Paper]</span>
+      </li>
+      <li><span class="pub-title">Understanding ethereum via graph analysis</span> <br>
+        Ting Chen, Yuxiao Zhu, Zihao Li, <u>Jiachi Chen</u>, Xiaoqi Li, Xiapu Luo, Xiaodong Lin, Xiaosong Zhang<br>
+        <span class="pub-venue">[IEEE Conference on Computer Communications (INFOCOM'18), <b>CCF A, <tt>🏆Best Paper Award</tt></b>]</span>
+      </li>
+      <li><span class="pub-title">An adaptive gas cost mechanism for ethereum to defend against under-priced dos attacks</span> <br>
+        Ting Chen, Xiaoqi Li, Ying Wang, <u>Jiachi Chen</u>, Zihao Li, Xiapu Luo, Man Ho Au, Xiaosong Zhang<br>
+        <span class="pub-venue">[International Conference on Information Security Practice and Experience (ISPEC'17), <b><tt>🏆Best Paper Award</tt></b>]</span>
+      </li>
+      <li><span class="pub-title">Bug Reports for Desktop Software and Mobile Apps in GitHub: What's the Difference?</span> <br>
+        Tao Zhang, <u>Jiachi Chen</u>, Xiapu Luo, Tao Li<br>
+        <span class="pub-venue">[IEEE Software'17]</span>
+      </li>
+      <li><span class="pub-title">Bug report enrichment with application of automated fixer recommendation</span> <br>
+        Tao Zhang, <u>Jiachi Chen</u>, He Jiang, Xiapu Luo, Xin Xia<br>
+        <span class="pub-venue">[IEEE/ACM 25th International Conference on Program Comprehension (ICPC'17), CCF B]</span>
+      </li>
+      <li><span class="pub-title">Towards more accurate severity prediction and fixer recommendation of software bugs</span> <br>
+        Tao Zhang, <u>Jiachi Chen</u>, Geunseok Yang, Byungjeong Lee, Xiapu Luo<br>
+        <span class="pub-venue">[Journal of Systems and Software (JSS'16), CCF B]</span>
+      </li>
+    </ul>
+  </section>
+
+  <!-- Professional Services -->
+  <section>
+    <h2>Professional Services</h2>
+    <ul class="service-list">
+      <li>Program Chair: APSEC'25-ERA Track, Blocksys'23</li>
+      <li>Program Committee: FSE'26, ISSTA'25, ICSE'25, ASE'25-Industry Track, SANER'25, ISSTA'24, ICPC'24, APSEC'24, SANER'23, APSEC'23, Internetware'23, Blocksys'23, Chinasoft'23</li>
+      <li>Editor: Blockchain: Research and Applications, Chinese Journal of Electronics</li>
+      <li>Reviewer for Journals: TSE, TOSEM, TDSC, TIFS, CACM, EMSE, JSS, AuSE, JSEM</li>
+    </ul>
+  </section>
+
+  <!-- optional footer (year / credit) -->
+  <footer>
+    © Jiachi Chen · Last updated March 2026
+  </footer>
+</div>
+</body>
+</html>
