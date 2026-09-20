@@ -1,0 +1,79 @@
+{
+  "biography": "<p>I am currently a <strong>ZJU 100 Young Professor</strong> in the College of Computer Science and Technology at Zhejiang University. Before joining Zhejiang University, I served as an Associate (tenured) Professor in the School of Software Engineering at Sun Yat-sen University. I received my Ph.D. from the Faculty of Information Technology at Monash University. I am very fortunate to have been advised by many outstanding researchers during my studies, including <a href=\"https://sites.google.com/site/johncgrundy/\">Prof. John Grundy</a>, <a href=\"https://jiangshanyu.github.io/\">Dr. Jiangshan Yu</a>, <a href=\"https://xin-xia.github.io/\">Prof. Xin Xia</a>, <a href=\"http://www4.comp.polyu.edu.hk/~csxluo/\">Prof. Xiapu Luo</a> and <a href=\"https://faculty.uestc.edu.cn/chenting/en/index.htm\">Prof. Ting Chen</a>.</p>",
+  "experience": [
+    "12/2025 – Present, ZJU 100 Young Professor, College of Computer Science and Technology, Zhejiang University",
+    "03/2025 – 12/2025, Associate Professor, School of Software Engineering, Sun Yat-Sen University",
+    "04/2022 – 03/2025, Assistant Professor, School of Software Engineering, Sun Yat-Sen University",
+    "03/2019 – 03/2022, Ph.D, Faculty of Information Technology, Monash University",
+    "10/2016 – 06/2018, Research Assistant in The Hong Kong Polytechnic University"
+  ],
+  "awards": [
+    "<li><font color=\"Red\">Early Career Award</font>, IEEE TEMS Technical Committee on Blockchain and Distributed Ledger Technologies, in cooperation with NTU CCTF, 2026</li>",
+    "<li><font color=\"Red\">Empowering Chinese Blockchain Innovators: \"Blockchain 60 People\" (赋能中国区块链创新人物“区块链60人”)</font>, 2025</li>",
+    "<li><font color=\"Red\">Young Elite Scientists Sponsorship Program by the Chinese Institute of Electronics (中国电子学会青年人才托举工程)</font>, 2025</li>",
+    "<li><font color=\"Red\">Top 2% Scientist</font>, 2025</li>",
+    "<li><font color=\"Red\">CCF Scientific and Technological Achievement Award - Second Prize in Natural Sciences (CCF科技成果奖自然科学二等奖)</font>, 2025</li>",
+    "<li><font color=\"Red\">ACM SIGSOFT Distinguished Paper Award</font>, 47th International Conference on Software Engineering (ICSE), 2025</li>",
+    "<li><font color=\"Red\">ACM SIGSOFT Distinguished Paper Award</font>, 47th International Conference on Software Engineering (ICSE), 2025</li>",
+    "<li><font color=\"Red\">ACM SIGSOFT Distinguished Paper Award</font>, The ACM SIGSOFT International Symposium on Software Testing and Analysis (ISSTA), 2024</li>",
+    "<li><font color=\"Red\">ACM SIGSOFT Distinguished Paper Award</font>, The ACM SIGSOFT International Symposium on Software Testing and Analysis (ISSTA), 2024</li>",
+    "<li><font color=\"Red\">ACM SIGSOFT Distinguished Paper Award</font>, 14th Asia-Pacific Symposium on Internetware (Internetware), 2024</li>",
+    "<li><font color=\"Red\">Best Paper Award</font>, IEEE CSCloud, 2023</li>",
+    "<li><font color=\"Red\">Best Paper Award</font>, 40th IEEE International Conference on Computer Communications(INFOCOM), 2018</li>",
+    "<li><font color=\"Red\">Best Paper Award</font>, 13th International Conference on Information Security Practice and Experience (ISPEC), 2017</li>"
+  ],
+  "services": [
+    "Program Chair: APSEC'25-ERA Track, Blocksys'23",
+    "Program Committee: Security'27, FSE'26, ISSTA'25, ICSE'25, ASE'25-Industry Track, SANER'25, ISSTA'24, ICPC'24, APSEC'24, SANER'23, APSEC'23, Internetware'23, Blocksys'23, Chinasoft'23",
+    "Editor: Blockchain: Research and Applications, Chinese Journal of Electronics",
+    "Reviewer for Journals: TSE, TOSEM, TDSC, TIFS, CACM, EMSE, JSS, AuSE, JSEM"
+  ],
+  "analytics": "<script async src=\"https://www.googletagmanager.com/gtag/js?id=UA-158965281-1\"></script>\n  <script>\n    window.dataLayer = window.dataLayer || [];\n    function gtag(){dataLayer.push(arguments);}\n    gtag('js', new Date());\n    gtag('config', 'UA-158965281-1');\n  </script>",
+  "recruiting": "Looking for highly motivated students in LLM Security, AI Agent, and AI for System/Coding/Security/Web3/Mobile.",
+  "paper_award_groups": [
+    {
+      "venue": "ICSE",
+      "year": 2025,
+      "paper_ids": [
+        "C32",
+        "C28"
+      ]
+    },
+    {
+      "venue": "ISSTA",
+      "year": 2024,
+      "paper_ids": [
+        "C24",
+        "C23"
+      ]
+    },
+    {
+      "venue": "Internetware",
+      "year": 2024,
+      "paper_ids": [
+        "C26"
+      ]
+    },
+    {
+      "venue": "CSCloud",
+      "year": 2023,
+      "paper_ids": [
+        "C17"
+      ]
+    },
+    {
+      "venue": "INFOCOM",
+      "year": 2018,
+      "paper_ids": [
+        "C3"
+      ]
+    },
+    {
+      "venue": "ISPEC",
+      "year": 2017,
+      "paper_ids": [
+        "C2"
+      ]
+    }
+  ]
+}

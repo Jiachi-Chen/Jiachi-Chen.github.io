@@ -1,0 +1,1187 @@
+{
+  "categories": [
+    {
+      "id": "ai-for-se",
+      "title": "AI for Software Engineering",
+      "zh": "AI 赋能软件工程",
+      "description": "Advancing AI-assisted software development through repository-level reasoning, code generation and translation, software agents, and realistic evaluation.",
+      "subtopics": [
+        "Repository-level code intelligence",
+        "Efficient generation and translation",
+        "Software agents, data, and evaluation"
+      ],
+      "representatives": [
+        "C29",
+        "C49",
+        "J33"
+      ],
+      "count": 20,
+      "role": "primary"
+    },
+    {
+      "id": "trustworthy-ai",
+      "title": "Trustworthy LLMs & Agents",
+      "zh": "可信大模型与智能体",
+      "description": "Understanding and improving the security and reliability of language models and autonomous agents, including MCP security, agent defects, and malicious-code risks.",
+      "subtopics": [
+        "Agent and MCP security",
+        "Robustness of code generation",
+        "Malicious-code safety and provenance"
+      ],
+      "representatives": [
+        "J39",
+        "J34",
+        "J42",
+        "C27"
+      ],
+      "count": 7,
+      "role": "primary"
+    },
+    {
+      "id": "ai-for-web3",
+      "title": "AI for Web3",
+      "zh": "AI 赋能 Web3",
+      "description": "Combining language models, agents, and learning methods with program analysis to audit, generate, maintain, and optimize smart contracts and decentralized applications.",
+      "subtopics": [
+        "LLM-assisted contract analysis",
+        "Learning-based DApp diagnosis",
+        "Contract generation and maintenance"
+      ],
+      "representatives": [
+        "C40",
+        "C30",
+        "J24",
+        "J41"
+      ],
+      "count": 17,
+      "role": "primary"
+    },
+    {
+      "id": "foundations",
+      "title": "Research Foundations",
+      "zh": "研究基础：Web3 安全与软件分析",
+      "role": "foundation",
+      "description": "My broader research spans smart-contract and DeFi security, blockchain ecosystem measurement, software quality, and secure and efficient systems.",
+      "subtopics": [
+        "Web3 security and reliability",
+        "Blockchain ecosystems and measurement",
+        "Software quality and systems"
+      ],
+      "representatives": [
+        "J8",
+        "J6",
+        "J4"
+      ],
+      "count": 56
+    }
+  ],
+  "papers": [
+    {
+      "id": "J45",
+      "category": "foundations",
+      "tags": [
+        "Compiler Risks",
+        "Smart Contracts"
+      ],
+      "rationale": "研究智能合约编译器版本风险，核心是合约安全与语义可靠性。",
+      "foundation_area": "web3-security"
+    },
+    {
+      "id": "J44",
+      "category": "ai-for-web3",
+      "tags": [
+        "LLMs",
+        "Cross-chain",
+        "Program Analysis"
+      ],
+      "rationale": "明确以 LLM 辅助检测多链复用合约中的 EVM 不等价问题。"
+    },
+    {
+      "id": "J43",
+      "category": "foundations",
+      "tags": [
+        "VANET",
+        "Authentication",
+        "Distributed Agents"
+      ],
+      "rationale": "研究车联网 V2E 认证与协同代理；题目中的 agents 不等同于 LLM 智能体。",
+      "foundation_area": "software-systems"
+    },
+    {
+      "id": "C55",
+      "category": "foundations",
+      "tags": [
+        "Compiler Optimization",
+        "Performance",
+        "Industrial Systems"
+      ],
+      "rationale": "研究工业系统中跨层 PGO 优化及性能。",
+      "foundation_area": "software-systems"
+    },
+    {
+      "id": "J42",
+      "category": "trustworthy-ai",
+      "tags": [
+        "Malicious Code",
+        "Watermarking",
+        "LLMs"
+      ],
+      "rationale": "追踪 LLM 生成的恶意代码，属于生成式 AI 安全与溯源。"
+    },
+    {
+      "id": "J41",
+      "category": "ai-for-web3",
+      "tags": [
+        "LLMs",
+        "Smart Contracts",
+        "Maintenance"
+      ],
+      "rationale": "使用 LLM 辅助智能合约版本更新。"
+    },
+    {
+      "id": "J40",
+      "category": "ai-for-se",
+      "tags": [
+        "Code Translation",
+        "Reinforcement Learning",
+        "Efficiency"
+      ],
+      "rationale": "通过强化学习优化代码翻译推理。"
+    },
+    {
+      "id": "J39",
+      "category": "trustworthy-ai",
+      "tags": [
+        "MCP",
+        "Agent Security",
+        "Attack Surfaces"
+      ],
+      "rationale": "研究 MCP 生态中的攻击面与安全风险。"
+    },
+    {
+      "id": "C54",
+      "category": "ai-for-se",
+      "tags": [
+        "Code Completion",
+        "Long Context",
+        "Efficiency"
+      ],
+      "rationale": "研究长代码补全的稀疏注意力机制与计算效率。"
+    },
+    {
+      "id": "C53",
+      "category": "ai-for-se",
+      "tags": [
+        "Code Completion",
+        "Benchmark",
+        "Repository Context"
+      ],
+      "rationale": "面向 HarmonyOS 的仓库级代码补全评测。"
+    },
+    {
+      "id": "C52",
+      "category": "trustworthy-ai",
+      "tags": [
+        "Secure Code Generation",
+        "Benchmark",
+        "Repositories"
+      ],
+      "rationale": "核心目标是评估真实仓库中的安全代码生成能力。"
+    },
+    {
+      "id": "C51",
+      "category": "ai-for-se",
+      "tags": [
+        "Benchmark",
+        "Developer Knowledge",
+        "LLMs"
+      ],
+      "rationale": "以开发知识问答衡量 LLM 软件开发能力。"
+    },
+    {
+      "id": "J38",
+      "category": "ai-for-se",
+      "tags": [
+        "Secure Code Generation",
+        "Hardware Design",
+        "Knowledge Graphs"
+      ],
+      "rationale": "利用知识图谱和 LLM 生成安全 Verilog，主线为 AI 辅助开发；安全生成为交叉主题。"
+    },
+    {
+      "id": "C50",
+      "category": "foundations",
+      "tags": [
+        "Fuzzing",
+        "State Modeling",
+        "Smart Contracts"
+      ],
+      "rationale": "官方摘要说明采用状态建模与状态感知 fuzzing 检测漏洞。",
+      "foundation_area": "web3-security"
+    },
+    {
+      "id": "C49",
+      "category": "ai-for-se",
+      "tags": [
+        "Code Reasoning",
+        "Benchmark",
+        "Repository Context"
+      ],
+      "rationale": "评估长上下文模型的仓库级代码推理能力。"
+    },
+    {
+      "id": "C48",
+      "category": "ai-for-web3",
+      "tags": [
+        "LLMs",
+        "Program Analysis",
+        "Consistency"
+      ],
+      "rationale": "结合 LLM 与程序分析检查智能合约的代码注释一致性。"
+    },
+    {
+      "id": "C47",
+      "category": "ai-for-se",
+      "tags": [
+        "Data Construction",
+        "Software Engineering",
+        "Automation"
+      ],
+      "rationale": "研究软件工程任务的数据自动构建。"
+    },
+    {
+      "id": "C46",
+      "category": "ai-for-se",
+      "tags": [
+        "Code Completion",
+        "Model Cascading",
+        "Efficiency"
+      ],
+      "rationale": "以本地与云端模型级联平衡代码补全延迟与准确性。"
+    },
+    {
+      "id": "J37",
+      "category": "ai-for-se",
+      "tags": [
+        "Context Utilization",
+        "Code Intelligence"
+      ],
+      "rationale": "研究上下文在代码智能任务中的作用。"
+    },
+    {
+      "id": "J36",
+      "category": "ai-for-web3",
+      "tags": [
+        "LLMs",
+        "Access Control",
+        "Repositories"
+      ],
+      "rationale": "作者摘要明确以 LLM 定位敏感函数并补全不可编译合约，再用程序分析检测访问控制漏洞。"
+    },
+    {
+      "id": "J35",
+      "category": "ai-for-web3",
+      "tags": [
+        "LLMs",
+        "Gas Efficiency",
+        "Remediation"
+      ],
+      "rationale": "以 LLM 辅助修复智能合约 gas 低效问题。"
+    },
+    {
+      "id": "J34",
+      "category": "trustworthy-ai",
+      "tags": [
+        "Autonomous Agents",
+        "Defect Detection",
+        "Reliability"
+      ],
+      "rationale": "定义并检测 LLM 自主智能体自身的缺陷。"
+    },
+    {
+      "id": "C45",
+      "category": "foundations",
+      "tags": [
+        "Address Misuse",
+        "Cross-platform",
+        "Blockchain"
+      ],
+      "rationale": "研究区块链地址误用引起的跨平台安全风险。",
+      "foundation_area": "web3-security"
+    },
+    {
+      "id": "C44",
+      "category": "foundations",
+      "tags": [
+        "Signature Replay",
+        "Cryptography",
+        "Smart Contracts"
+      ],
+      "rationale": "检测智能合约签名重放漏洞。",
+      "foundation_area": "web3-security"
+    },
+    {
+      "id": "C43",
+      "category": "ai-for-web3",
+      "tags": [
+        "LLMs",
+        "Dataset Construction",
+        "Vulnerability Detection"
+      ],
+      "rationale": "以 LLM 驱动智能合约漏洞数据集构建。"
+    },
+    {
+      "id": "J33",
+      "category": "ai-for-se",
+      "tags": [
+        "Code Translation",
+        "Benchmark",
+        "Repositories"
+      ],
+      "rationale": "评估真实多语言仓库级代码翻译。"
+    },
+    {
+      "id": "J32",
+      "category": "ai-for-se",
+      "tags": [
+        "Low-code Development",
+        "LLMs",
+        "Empirical Study"
+      ],
+      "rationale": "比较传统与 LLM 支持的低代码开发。"
+    },
+    {
+      "id": "J31",
+      "category": "foundations",
+      "tags": [
+        "Weakness Taxonomy",
+        "Smart Contracts"
+      ],
+      "rationale": "建立迭代式合约弱点分类体系。",
+      "foundation_area": "web3-security"
+    },
+    {
+      "id": "J30",
+      "category": "ai-for-web3",
+      "tags": [
+        "LLMs",
+        "Logical Vulnerabilities",
+        "Evaluation"
+      ],
+      "rationale": "评估 ChatGPT 在智能合约逻辑漏洞检测中的潜力。"
+    },
+    {
+      "id": "J29",
+      "category": "ai-for-se",
+      "tags": [
+        "Code Search",
+        "Benchmark",
+        "Software Agents"
+      ],
+      "rationale": "通过多选基准与测试驱动 agents 增强代码搜索评测。"
+    },
+    {
+      "id": "C42",
+      "category": "foundations",
+      "tags": [
+        "DeFi",
+        "Staking",
+        "Logical Defects"
+      ],
+      "rationale": "定义与检测 DeFi staking 奖励逻辑缺陷。",
+      "foundation_area": "web3-security"
+    },
+    {
+      "id": "C41",
+      "category": "trustworthy-ai",
+      "tags": [
+        "Context Poisoning",
+        "Energy Attacks",
+        "Code Generation"
+      ],
+      "rationale": "研究检索增强代码生成受到上下文投毒后的能耗攻击。"
+    },
+    {
+      "id": "C40",
+      "category": "ai-for-web3",
+      "tags": [
+        "LLM Agents",
+        "Taint Analysis",
+        "Access Control"
+      ],
+      "rationale": "作者论文明确提出 LLM 多智能体系统，开展智能合约访问控制污点分析。"
+    },
+    {
+      "id": "C39",
+      "category": "ai-for-web3",
+      "tags": [
+        "Code Generation",
+        "Solidity",
+        "Benchmark"
+      ],
+      "rationale": "以智能合约级 Solidity 生成为评测对象。"
+    },
+    {
+      "id": "C38",
+      "category": "ai-for-se",
+      "tags": [
+        "Retrieval",
+        "Code Completion",
+        "Repository Context"
+      ],
+      "rationale": "针对仓库级代码补全对齐检索与目标意图。"
+    },
+    {
+      "id": "J28",
+      "category": "foundations",
+      "tags": [
+        "Upgradeable Contracts",
+        "Maintenance",
+        "Developer Experience"
+      ],
+      "rationale": "研究可升级合约的开发困难与维护问题。",
+      "foundation_area": "web3-security"
+    },
+    {
+      "id": "J27",
+      "category": "foundations",
+      "tags": [
+        "State Manipulation",
+        "Dataflow Analysis",
+        "Smart Contracts"
+      ],
+      "rationale": "利用状态感知数据流分析揭示合约状态操纵攻击。",
+      "foundation_area": "web3-security"
+    },
+    {
+      "id": "J26",
+      "category": "ai-for-se",
+      "tags": [
+        "Software Agents",
+        "Survey",
+        "Software Engineering"
+      ],
+      "rationale": "综述智能体在软件工程中的应用与发展。"
+    },
+    {
+      "id": "J25",
+      "category": "ai-for-web3",
+      "tags": [
+        "Fault Localization",
+        "Explainability",
+        "LLMs"
+      ],
+      "rationale": "官方实现包含学习模型和故障解释模块；论文使用 LLM 解释 DApp 故障。"
+    },
+    {
+      "id": "C37",
+      "category": "foundations",
+      "tags": [
+        "Cross-chain",
+        "EVM Semantics",
+        "Code Reuse"
+      ],
+      "rationale": "识别多链复用中的 EVM 不等价代码问题。",
+      "foundation_area": "web3-security"
+    },
+    {
+      "id": "C36",
+      "category": "ai-for-se",
+      "tags": [
+        "Issue Resolution",
+        "Multimodal",
+        "Benchmark"
+      ],
+      "rationale": "评估多语言、多模态 GitHub issue 解决能力。"
+    },
+    {
+      "id": "C35",
+      "category": "trustworthy-ai",
+      "tags": [
+        "Hallucinations",
+        "Code Generation",
+        "Reliability"
+      ],
+      "rationale": "研究代码生成中的 LLM 幻觉机制与缓解。"
+    },
+    {
+      "id": "J24",
+      "category": "ai-for-web3",
+      "tags": [
+        "LLMs",
+        "Symbolic Execution",
+        "Numerical Defects"
+      ],
+      "rationale": "以 LLM 剪枝符号执行检测合约数值缺陷。"
+    },
+    {
+      "id": "J23",
+      "category": "foundations",
+      "tags": [
+        "Cryptographic Defects",
+        "Ethereum"
+      ],
+      "rationale": "系统分析以太坊合约密码学缺陷。",
+      "foundation_area": "web3-security"
+    },
+    {
+      "id": "J22",
+      "category": "foundations",
+      "tags": [
+        "Reentrancy",
+        "Contract Standards",
+        "Static Analysis"
+      ],
+      "rationale": "基于合约标准规则检测重入漏洞。",
+      "foundation_area": "web3-security"
+    },
+    {
+      "id": "J21",
+      "category": "foundations",
+      "tags": [
+        "Invariants",
+        "Testing",
+        "Smart Contracts"
+      ],
+      "rationale": "作者摘要描述动态不变式推断与模式分析，属于程序分析及测试预言生成。",
+      "foundation_area": "web3-security"
+    },
+    {
+      "id": "C34",
+      "category": "ai-for-se",
+      "tags": [
+        "Coding Style",
+        "Code Generation",
+        "Evaluation"
+      ],
+      "rationale": "研究 LLM 生成代码的风格一致性与软件质量。"
+    },
+    {
+      "id": "C33",
+      "category": "foundations",
+      "tags": [
+        "Test Generation",
+        "Test Migration",
+        "Smart Contracts"
+      ],
+      "rationale": "通过链上测试增广和迁移生成合约测试。",
+      "foundation_area": "web3-security"
+    },
+    {
+      "id": "C32",
+      "category": "foundations",
+      "tags": [
+        "TON",
+        "Defect Detection",
+        "Smart Contracts"
+      ],
+      "rationale": "定义并检测 The Open Network 合约缺陷。",
+      "foundation_area": "web3-security"
+    },
+    {
+      "id": "C31",
+      "category": "foundations",
+      "tags": [
+        "Centralization",
+        "Defect Detection",
+        "Smart Contracts"
+      ],
+      "rationale": "定义与检测合约中心化缺陷。",
+      "foundation_area": "web3-security"
+    },
+    {
+      "id": "C30",
+      "category": "ai-for-web3",
+      "tags": [
+        "LLMs",
+        "Symbolic Execution",
+        "DApp Consistency"
+      ],
+      "rationale": "结合 LLM 与数据流引导符号执行分析 DApp 不一致性。"
+    },
+    {
+      "id": "C29",
+      "category": "ai-for-se",
+      "tags": [
+        "Reinforcement Learning",
+        "Code Completion",
+        "Repositories"
+      ],
+      "rationale": "以强化学习改进仓库级代码补全。"
+    },
+    {
+      "id": "C28",
+      "category": "foundations",
+      "tags": [
+        "Cryptographic Defects",
+        "Ethereum"
+      ],
+      "rationale": "定义、分析与检测以太坊合约密码学缺陷。",
+      "foundation_area": "web3-security"
+    },
+    {
+      "id": "J20",
+      "category": "ai-for-se",
+      "tags": [
+        "LLMs",
+        "Software Engineering",
+        "Evaluation"
+      ],
+      "rationale": "系统研究 LLM 执行软件工程任务的能力。"
+    },
+    {
+      "id": "J19",
+      "category": "ai-for-web3",
+      "tags": [
+        "LLMs",
+        "Vulnerability Detection",
+        "Evaluation"
+      ],
+      "rationale": "评估 ChatGPT 在智能合约漏洞检测中的能力边界。"
+    },
+    {
+      "id": "C27",
+      "category": "trustworthy-ai",
+      "tags": [
+        "Malicious Code",
+        "Benchmark",
+        "LLM Safety"
+      ],
+      "rationale": "评估 LLM 抵抗恶意代码请求的安全能力。"
+    },
+    {
+      "id": "J18",
+      "category": "foundations",
+      "tags": [
+        "Reentrancy",
+        "Analysis Tools",
+        "Precision"
+      ],
+      "rationale": "提高合约分析工具的重入漏洞检测精度。",
+      "foundation_area": "web3-security"
+    },
+    {
+      "id": "C26",
+      "category": "foundations",
+      "tags": [
+        "NFTs",
+        "Wash Trading",
+        "Market Manipulation"
+      ],
+      "rationale": "大规模实证分析 NFT 洗售，主线为市场行为与风险测量。",
+      "foundation_area": "web3-ecosystems"
+    },
+    {
+      "id": "J17",
+      "category": "foundations",
+      "tags": [
+        "Web3",
+        "Infrastructure",
+        "Survey"
+      ],
+      "rationale": "综述 Web3 基础设施、应用及普及情况。",
+      "foundation_area": "web3-ecosystems"
+    },
+    {
+      "id": "J16",
+      "category": "foundations",
+      "tags": [
+        "DeFi",
+        "Financial Traps",
+        "Scam Detection"
+      ],
+      "rationale": "研究并检测合约中的去中心化金融陷阱。",
+      "foundation_area": "web3-security"
+    },
+    {
+      "id": "C25",
+      "category": "foundations",
+      "tags": [
+        "Move",
+        "Security Analysis",
+        "Smart Contracts"
+      ],
+      "rationale": "面向 Move 合约进行安全实证研究与自动分析。",
+      "foundation_area": "web3-security"
+    },
+    {
+      "id": "C24",
+      "category": "ai-for-web3",
+      "tags": [
+        "LLMs",
+        "Program Analysis",
+        "Code Reuse"
+      ],
+      "rationale": "作者论文说明 SOChecker 结合微调 LLM 补全和传统程序分析以检查合约片段。"
+    },
+    {
+      "id": "C23",
+      "category": "ai-for-se",
+      "tags": [
+        "Code Generation",
+        "Token Efficiency",
+        "LLMs"
+      ],
+      "rationale": "研究代码生成的过量 token 预防及效率。"
+    },
+    {
+      "id": "J15",
+      "category": "foundations",
+      "tags": [
+        "DeFi",
+        "Rug Pull",
+        "Smart Contracts"
+      ],
+      "rationale": "检测 DeFi 合约相关 rug pull 风险。",
+      "foundation_area": "web3-security"
+    },
+    {
+      "id": "J14",
+      "category": "foundations",
+      "tags": [
+        "Dataset Construction",
+        "Weaknesses",
+        "DApps"
+      ],
+      "rationale": "构建 DApp 合约弱点数据集；数据集本身不自动归为 AI 方法。",
+      "foundation_area": "web3-security"
+    },
+    {
+      "id": "C22",
+      "category": "ai-for-web3",
+      "tags": [
+        "Graph Neural Networks",
+        "Fault Localization",
+        "DApps"
+      ],
+      "rationale": "作者开源实现明确采用图神经网络开展 DApp 故障定位。"
+    },
+    {
+      "id": "J13",
+      "category": "foundations",
+      "tags": [
+        "Market Manipulation",
+        "Social Media",
+        "Transactions"
+      ],
+      "rationale": "结合社交媒体与交易数据实证研究加密货币市场操纵。",
+      "foundation_area": "web3-ecosystems"
+    },
+    {
+      "id": "C21",
+      "category": "foundations",
+      "tags": [
+        "Reentrancy",
+        "Scalable Analysis",
+        "Smart Contracts"
+      ],
+      "rationale": "提高复杂合约重入漏洞检测效率。",
+      "foundation_area": "web3-security"
+    },
+    {
+      "id": "C20",
+      "category": "foundations",
+      "tags": [
+        "Cryptographic APIs",
+        "Developer Experience",
+        "Ethereum"
+      ],
+      "rationale": "研究合约开发者在密码学 API 使用方面的困难。",
+      "foundation_area": "web3-security"
+    },
+    {
+      "id": "C19",
+      "category": "foundations",
+      "tags": [
+        "Reentrancy",
+        "Attacker Contracts",
+        "Dataflow Analysis"
+      ],
+      "rationale": "作者摘要明确为跨合约静态数据流分析，识别攻击者合约。",
+      "foundation_area": "web3-security"
+    },
+    {
+      "id": "C18",
+      "category": "foundations",
+      "tags": [
+        "Library Misuse",
+        "Empirical Study",
+        "Smart Contracts"
+      ],
+      "rationale": "实证分析合约库误用与安全风险。",
+      "foundation_area": "web3-security"
+    },
+    {
+      "id": "C17",
+      "category": "foundations",
+      "tags": [
+        "DeFi",
+        "NFTs",
+        "Market Structure"
+      ],
+      "rationale": "探索以太坊 DeFi 与 NFT 的异构去中心化市场。",
+      "foundation_area": "web3-ecosystems"
+    },
+    {
+      "id": "C16",
+      "category": "foundations",
+      "tags": [
+        "DeFi",
+        "Token Leakage",
+        "Vulnerability Detection"
+      ],
+      "rationale": "检测 DeFi 应用 token 泄漏漏洞。",
+      "foundation_area": "web3-security"
+    },
+    {
+      "id": "C15",
+      "category": "ai-for-se",
+      "tags": [
+        "LLMs",
+        "Data Augmentation",
+        "Code Search"
+      ],
+      "rationale": "以 ChatGPT 数据增广改进语义代码搜索。"
+    },
+    {
+      "id": "C14",
+      "category": "foundations",
+      "tags": [
+        "NFTs",
+        "Defect Detection",
+        "Smart Contracts"
+      ],
+      "rationale": "定义与检测 NFT 智能合约缺陷。",
+      "foundation_area": "web3-security"
+    },
+    {
+      "id": "C13",
+      "category": "foundations",
+      "tags": [
+        "DeFi",
+        "Price Manipulation",
+        "Taint Analysis"
+      ],
+      "rationale": "检测 DeFi 协议中的价格操纵漏洞，目标是协议安全。",
+      "foundation_area": "web3-security"
+    },
+    {
+      "id": "C12",
+      "category": "foundations",
+      "tags": [
+        "Price Feeds",
+        "Oracles",
+        "Smart Contracts"
+      ],
+      "rationale": "检测合约非预期价格馈送问题。",
+      "foundation_area": "web3-security"
+    },
+    {
+      "id": "C11",
+      "category": "ai-for-web3",
+      "tags": [
+        "Machine Learning",
+        "Crash Detection",
+        "Smart Contracts"
+      ],
+      "rationale": "SMU 作者机构摘要确认 CRASHSCDET 基于机器学习与静态指标。"
+    },
+    {
+      "id": "C10",
+      "category": "foundations",
+      "tags": [
+        "Reentrancy",
+        "Ethereum",
+        "Vulnerability Detection"
+      ],
+      "rationale": "研究以太坊合约的重入漏洞检测。",
+      "foundation_area": "web3-security"
+    },
+    {
+      "id": "C9",
+      "category": "ai-for-web3",
+      "tags": [
+        "Deep Learning",
+        "Reentrancy",
+        "Fault Localization"
+      ],
+      "rationale": "题目明确提出深度学习的两阶段重入检测与定位方法。"
+    },
+    {
+      "id": "J12",
+      "category": "foundations",
+      "tags": [
+        "Mobile Apps",
+        "User Reviews",
+        "Fault Localization"
+      ],
+      "rationale": "通过用户评价定位移动应用功能错误，属于软件质量与维护。",
+      "foundation_area": "software-systems"
+    },
+    {
+      "id": "J11",
+      "category": "foundations",
+      "tags": [
+        "Inline Assembly",
+        "Empirical Study",
+        "Ethereum"
+      ],
+      "rationale": "大规模实证研究合约内联汇编的工程实践与可靠性。",
+      "foundation_area": "web3-security"
+    },
+    {
+      "id": "J10",
+      "category": "foundations",
+      "tags": [
+        "Selfdestruct",
+        "Ethereum",
+        "Contract Lifecycle"
+      ],
+      "rationale": "研究合约生命周期及 selfdestruct 使用。",
+      "foundation_area": "web3-security"
+    },
+    {
+      "id": "J9",
+      "category": "foundations",
+      "tags": [
+        "Maintenance",
+        "Smart Contracts",
+        "Survey"
+      ],
+      "rationale": "研究合约部署后的维护问题、技术与挑战。",
+      "foundation_area": "web3-security"
+    },
+    {
+      "id": "J8",
+      "category": "foundations",
+      "tags": [
+        "Bytecode Analysis",
+        "Defect Detection",
+        "Ethereum"
+      ],
+      "rationale": "以 EVM 字节码分析自动检测智能合约缺陷。",
+      "foundation_area": "web3-security"
+    },
+    {
+      "id": "C8",
+      "category": "foundations",
+      "tags": [
+        "Practitioner Study",
+        "Smart Contracts",
+        "Security"
+      ],
+      "rationale": "从从业者视角研究智能合约安全。",
+      "foundation_area": "web3-security"
+    },
+    {
+      "id": "J7",
+      "category": "foundations",
+      "tags": [
+        "Defect Taxonomy",
+        "Ethereum"
+      ],
+      "rationale": "定义以太坊智能合约缺陷。",
+      "foundation_area": "web3-security"
+    },
+    {
+      "id": "J6",
+      "category": "foundations",
+      "tags": [
+        "Graph Analysis",
+        "Ethereum",
+        "Measurement"
+      ],
+      "rationale": "通过图分析理解以太坊网络结构与行为。",
+      "foundation_area": "web3-ecosystems"
+    },
+    {
+      "id": "C7",
+      "category": "foundations",
+      "tags": [
+        "Version Comparison",
+        "Vulnerability Detection",
+        "Smart Contracts"
+      ],
+      "rationale": "通过历史版本比较发现智能合约安全问题。",
+      "foundation_area": "web3-security"
+    },
+    {
+      "id": "J5",
+      "category": "foundations",
+      "tags": [
+        "Gas Efficiency",
+        "Program Analysis",
+        "Smart Contracts"
+      ],
+      "rationale": "检测合约 gas 低效模式，属于合约工程质量与效率。",
+      "foundation_area": "web3-security"
+    },
+    {
+      "id": "J4",
+      "category": "foundations",
+      "tags": [
+        "Mobile Apps",
+        "Change Localization",
+        "User Reviews"
+      ],
+      "rationale": "利用应用评价定位变更请求，属于移动软件维护。",
+      "foundation_area": "software-systems"
+    },
+    {
+      "id": "C6",
+      "category": "foundations",
+      "tags": [
+        "Ethereum",
+        "Data Exploration",
+        "Infrastructure"
+      ],
+      "rationale": "提供以太坊数据探索框架，支持生态测量。",
+      "foundation_area": "web3-ecosystems"
+    },
+    {
+      "id": "J3",
+      "category": "foundations",
+      "tags": [
+        "Android",
+        "Privacy Policies",
+        "Trustworthiness"
+      ],
+      "rationale": "评估 Android 隐私政策可信性，属于移动软件隐私与质量。",
+      "foundation_area": "software-systems"
+    },
+    {
+      "id": "C5",
+      "category": "foundations",
+      "tags": [
+        "Mobile Apps",
+        "User Reviews",
+        "Fault Localization"
+      ],
+      "rationale": "通过用户评价定位移动应用功能错误。",
+      "foundation_area": "software-systems"
+    },
+    {
+      "id": "C4",
+      "category": "foundations",
+      "tags": [
+        "Gas Efficiency",
+        "Smart Contracts",
+        "Optimization"
+      ],
+      "rationale": "研究智能合约使用成本优化。",
+      "foundation_area": "web3-security"
+    },
+    {
+      "id": "C3",
+      "category": "foundations",
+      "tags": [
+        "Graph Analysis",
+        "Ethereum",
+        "Measurement"
+      ],
+      "rationale": "以图分析研究以太坊网络。",
+      "foundation_area": "web3-ecosystems"
+    },
+    {
+      "id": "C2",
+      "category": "foundations",
+      "tags": [
+        "Gas Mechanism",
+        "Denial of Service",
+        "Ethereum"
+      ],
+      "rationale": "设计自适应 gas 机制防御低定价拒绝服务攻击。",
+      "foundation_area": "web3-security"
+    },
+    {
+      "id": "J2",
+      "category": "foundations",
+      "tags": [
+        "Bug Reports",
+        "Mobile Apps",
+        "Empirical Study"
+      ],
+      "rationale": "比较桌面软件与移动应用的缺陷报告。",
+      "foundation_area": "software-systems"
+    },
+    {
+      "id": "C1",
+      "category": "foundations",
+      "tags": [
+        "Bug Reports",
+        "Fixer Recommendation",
+        "Maintenance"
+      ],
+      "rationale": "以修复者推荐丰富缺陷报告，属于软件维护与缺陷管理。",
+      "foundation_area": "software-systems"
+    },
+    {
+      "id": "J1",
+      "category": "foundations",
+      "tags": [
+        "Bug Severity",
+        "Fixer Recommendation",
+        "Prediction"
+      ],
+      "rationale": "改进软件缺陷严重性预测与修复者推荐，保留早期软件质量研究谱系。",
+      "foundation_area": "software-systems"
+    }
+  ],
+  "classification_notes": [
+    "The homepage highlights three AI directions in this order: AI for Software Engineering, Trustworthy LLMs & Agents, and AI for Web3.",
+    "Research Foundations is a supporting archive, not a fourth peer direction. It includes ongoing as well as earlier work in Web3 security, ecosystem measurement, software quality, and systems.",
+    "Each paper has one category and cross-cutting tags. The three AI directions contain 20, 7, and 17 papers; foundations contains 56, totaling 100 without duplication.",
+    "AI for Web3 includes contract-specific AI/LLM/learning methods, even when security is the application. General development capabilities belong to AI for Software Engineering; security and reliability of models and agents belong to Trustworthy LLMs & Agents.",
+    "Foundation papers retain their original subfield in foundation_area. They are not relabeled as AI work solely to match the new homepage emphasis.",
+    "AI for Web3 includes early ML/GNN work. An automated tool, dataset, or non-LLM collaborative agent is not treated as an LLM contribution without evidence.",
+    "Assignment is interpretive and based mainly on titles, with selected ambiguous methods checked against primary sources. Original bibliographic metadata is preserved.",
+    "Agentic Economy and Web3 for AI remain stated broader interests, not additional publication-backed primary categories."
+  ],
+  "sources": [
+    {
+      "paper": "J36",
+      "url": "https://arxiv.org/abs/2510.19254",
+      "finding": "Author abstract explicitly states that TRACE employs LLMs before program analysis."
+    },
+    {
+      "paper": "C24",
+      "url": "https://nzjohng.github.io/publications/papers/issta2024_2.pdf",
+      "finding": "Author-hosted paper identifies SOChecker as fine-tuned LLM code completion combined with program analysis."
+    },
+    {
+      "paper": "C40",
+      "url": "https://baolingfeng.github.io/papers/ASE2025ACTaint.pdf",
+      "finding": "Author-hosted paper explicitly describes an LLM-based multi-agent system."
+    },
+    {
+      "paper": "C22",
+      "url": "https://github.com/wuzhy1ng/DAppFL",
+      "finding": "Author implementation identifies a graph neural network model and training pipeline."
+    },
+    {
+      "paper": "J25",
+      "url": "https://github.com/SodalimeZero/Malo_Code",
+      "finding": "Official repository contains trained localization models and fault-explanation code."
+    },
+    {
+      "paper": "C11",
+      "url": "https://ink.library.smu.edu.sg/sis_research/8560/",
+      "finding": "Author university repository describes a machine-learning detector using static source metrics."
+    },
+    {
+      "paper": "C50",
+      "url": "https://conf.researchr.org/details/fse-2026/fse-2026-research-papers/102/Odyssey-Hunting-Smart-Contract-Vulnerabilities-with-Fine-grained-State-Modeling-and",
+      "finding": "Official conference abstract describes state-aware fuzzing, not an AI method."
+    },
+    {
+      "paper": "J21",
+      "url": "https://arxiv.org/abs/2406.10054",
+      "finding": "Author abstract describes dynamic invariant detection and pattern-based inference."
+    },
+    {
+      "paper": "C19",
+      "url": "https://arxiv.org/abs/2403.19112",
+      "finding": "Author abstract describes cross-contract static dataflow analysis."
+    }
+  ]
+}
